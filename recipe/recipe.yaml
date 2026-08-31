@@ -1,20 +1,20 @@
 context:
-  version: "3.1"
+  version: "3.6.18"
 
 package:
   name: astyle
   version: ${{ version }}
 
 source:
-  url: https://sourceforge.net/projects/astyle/files/astyle/astyle%20${{ version }}/astyle_${{ version }}_linux.tar.gz
-  sha256: cbcc4cf996294534bb56f025d6f199ebfde81aa4c271ccbd5ee1c1a3192745d7
+  url: https://sourceforge.net/projects/astyle/files/astyle/astyle%20${{ (version | split('.'))[:2] | join('.') }}/astyle-${{ version }}.tar.bz2
+  sha256: d4fc433cfeacc952de295961bc8ae9eab722e08580baa6c1e8e7b39a7a2fbb48
 
 build:
   script:
     - make -C build/gcc -j${CPU_COUNT} CXX=$CXX
     - make -C build/gcc prefix=${PREFIX} INSTALL=install install
     - rm -rf ${PREFIX}/share/doc/astyle/html/*
-  number: 3
+  number: 0
   skip:
     - win
 
