@@ -1,5 +1,5 @@
 context:
-  version: "3.6.18"
+  version: "3.6.19"
 
 package:
   name: astyle
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://sourceforge.net/projects/astyle/files/astyle/astyle%20${{ (version | split('.'))[:2] | join('.') }}/astyle-${{ version }}.tar.bz2
-  sha256: d4fc433cfeacc952de295961bc8ae9eab722e08580baa6c1e8e7b39a7a2fbb48
+  sha256: ae5ef4ddf1f88288bcc8f6d53266707f80a81fcc6decf4da5fe5c8e420a0ab1c
 
 build:
   script:
